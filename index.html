@@ -217,6 +217,29 @@ Zobacz więcej profili
 </footer>
 
 </div>
+<script>
 
+function revealCards(){
+
+const cards=document.querySelectorAll(".card");
+
+const windowHeight=window.innerHeight;
+
+cards.forEach(card=>{
+
+const top=card.getBoundingClientRect().top;
+
+if(top < windowHeight-50){
+card.classList.add("show");
+}
+
+});
+
+}
+
+window.addEventListener("scroll",revealCards);
+window.addEventListener("load",revealCards);
+
+</script>
 </body>
 </html>
