@@ -23,37 +23,6 @@
 
 <div id="live-notification"></div>
 
-<script>
-
-const users = [
-"Anna (39) z Warszawy jest teraz online",
-"Kasia (42) z Krakowa utworzyła nowy profil",
-"Magda (36) z Wrocławia szuka nowych znajomości",
-"Ola (44) z Gdańska jest teraz aktywna",
-"Monika (41) z Poznania właśnie się zarejestrowała"
-];
-
-function showNotification(){
-
-const el = document.getElementById("live-notification");
-
-el.innerText = users[Math.floor(Math.random()*users.length)];
-
-el.style.opacity = "1";
-
-setTimeout(()=>{
-
-el.style.opacity = "0";
-
-},4000);
-
-}
-
-showNotification();
-setInterval(showNotification,8000);
-
-</script>
-
 <div class="hero-bg"></div>
 
 <div class="container">
@@ -219,6 +188,8 @@ Zobacz więcej profili
 </div>
 <script>
 
+document.addEventListener("DOMContentLoaded", function(){
+
 // LIVE NOTIFICATION
 
 const users = [
@@ -232,6 +203,8 @@ const users = [
 function showNotification(){
 
 const el=document.getElementById("live-notification");
+
+if(!el) return;
 
 el.innerText=users[Math.floor(Math.random()*users.length)];
 
@@ -249,7 +222,6 @@ showNotification();
 setInterval(showNotification,8000);
 
 
-
 // DYNAMIC COUNTER
 
 let active=120+Math.floor(Math.random()*20);
@@ -258,18 +230,19 @@ let online=15+Math.floor(Math.random()*10);
 
 function updateStats(){
 
+const activeEl=document.getElementById("active-members");
+const profilesEl=document.getElementById("new-profiles");
+const onlineEl=document.getElementById("online-now");
+
+if(!activeEl || !profilesEl || !onlineEl) return;
+
 active+=Math.floor(Math.random()*3)-1;
 profiles+=Math.floor(Math.random()*2);
 online+=Math.floor(Math.random()*3)-1;
 
-document.getElementById("active-members").innerText =
-active+" użytkowników aktywnych dziś";
-
-document.getElementById("new-profiles").innerText =
-profiles+" nowe profile dziś";
-
-document.getElementById("online-now").innerText =
-online+" osób online";
+activeEl.innerText=active+" użytkowników aktywnych dziś";
+profilesEl.innerText=profiles+" nowe profile dziś";
+onlineEl.innerText=online+" osób online";
 
 }
 
@@ -277,8 +250,7 @@ updateStats();
 setInterval(updateStats,7000);
 
 
-
-// CARD REVEAL ON SCROLL
+// CARD REVEAL
 
 function revealCards(){
 
@@ -301,8 +273,7 @@ card.classList.add("show");
 }
 
 window.addEventListener("scroll",revealCards);
-window.addEventListener("load",revealCards);
-
+revealCards();
 
 
 // RANDOMIZE CARDS
@@ -318,6 +289,8 @@ cards.sort(()=>Math.random()-0.5);
 cards.forEach(card=>container.appendChild(card));
 
 }
+
+});
 
 </script>
 </body>
