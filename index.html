@@ -251,27 +251,27 @@ setInterval(updateStats,6000)
 
 function revealCards(){
 
-const cards=document.querySelectorAll(".card");
+const cards = document.querySelectorAll(".card");
+const windowHeight = window.innerHeight;
 
-const windowHeight=window.innerHeight;
+cards.forEach(card => {
 
-cards.forEach(card=>{
+const top = card.getBoundingClientRect().top;
 
-const top=card.getBoundingClientRect().top;
-
-if(top < windowHeight-50){
-
+if(top < windowHeight - 50){
 card.classList.add("show");
-
 }
 
 });
 
 }
 
-window.addEventListener("scroll",revealCards);
-revealCards();
+window.addEventListener("scroll", revealCards);
+window.addEventListener("load", revealCards);
 
+setTimeout(revealCards, 200);
+setTimeout(revealCards, 600);
+setTimeout(revealCards, 1200);
 
 // RANDOMIZE CARDS
 
