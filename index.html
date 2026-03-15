@@ -1,34 +1,31 @@
 <!DOCTYPE html>
+
 <html lang="pl">
 <head>
+
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
-<title>Nowa miłość zaczyna się dziś | Poznaj nowych ludzi</title>
+<title>Nowa miłość zaczyna się dziś</title>
 
 <link rel="icon" type="image/x-icon" href="favicon.ico">
 
 <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@600;700&family=Inter:wght@400;500;600&display=swap" rel="stylesheet">
+
 <link rel="stylesheet" href="style.css">
 
 </head>
 
 <body>
 
-<div id="live-notification"></div>
 <div class="hero-bg"></div>
 
 <div class="container">
 
 <header class="hero">
 
-<div class="activity-bar">
-<span id="active-members">128 użytkowników aktywnych dziś</span>
-<span id="new-profiles">34 nowe profile dziś</span>
-<span id="online-now">19 osób online</span>
-</div>
-
 <h1>Nowa miłość zaczyna się dziś</h1>
+
 <p>Poznaj nowych ludzi i znajdź miłość w swojej okolicy.</p>
 
 <a href="open.html" class="btn main-btn">
@@ -39,38 +36,29 @@ Zobacz profile
 
 <section class="profiles">
 
-<div class="card-link"><div class="card"><img><div class="card-content"><h3></h3><p></p><span class="online"></span><div class="glass-btn">Zobacz profil</div></div></div></div>
-<div class="card-link"><div class="card"><img><div class="card-content"><h3></h3><p></p><span class="online"></span><div class="glass-btn">Zobacz profil</div></div></div></div>
-<div class="card-link"><div class="card"><img><div class="card-content"><h3></h3><p></p><span class="online"></span><div class="glass-btn">Zobacz profil</div></div></div></div>
-<div class="card-link"><div class="card"><img><div class="card-content"><h3></h3><p></p><span class="online"></span><div class="glass-btn">Zobacz profil</div></div></div></div>
-<div class="card-link"><div class="card"><img><div class="card-content"><h3></h3><p></p><span class="online"></span><div class="glass-btn">Zobacz profil</div></div></div></div>
-<div class="card-link"><div class="card"><img><div class="card-content"><h3></h3><p></p><span class="online"></span><div class="glass-btn">Zobacz profil</div></div></div></div>
-<div class="card-link"><div class="card"><img><div class="card-content"><h3></h3><p></p><span class="online"></span><div class="glass-btn">Zobacz profil</div></div></div></div>
-<div class="card-link"><div class="card"><img><div class="card-content"><h3></h3><p></p><span class="online"></span><div class="glass-btn">Zobacz profil</div></div></div></div>
+<a href="open.html" class="card-link"><div class="card"><img><div class="card-content"><h3></h3><p></p><span class="online"></span><div class="glass-btn">Zobacz profil</div></div></div></a>
+
+<a href="open.html" class="card-link"><div class="card"><img><div class="card-content"><h3></h3><p></p><span class="online"></span><div class="glass-btn">Zobacz profil</div></div></div></a>
+
+<a href="open.html" class="card-link"><div class="card"><img><div class="card-content"><h3></h3><p></p><span class="online"></span><div class="glass-btn">Zobacz profil</div></div></div></a>
+
+<a href="open.html" class="card-link"><div class="card"><img><div class="card-content"><h3></h3><p></p><span class="online"></span><div class="glass-btn">Zobacz profil</div></div></div></a>
+
+<a href="open.html" class="card-link"><div class="card"><img><div class="card-content"><h3></h3><p></p><span class="online"></span><div class="glass-btn">Zobacz profil</div></div></div></a>
+
+<a href="open.html" class="card-link"><div class="card"><img><div class="card-content"><h3></h3><p></p><span class="online"></span><div class="glass-btn">Zobacz profil</div></div></div></a>
+
+<a href="open.html" class="card-link"><div class="card"><img><div class="card-content"><h3></h3><p></p><span class="online"></span><div class="glass-btn">Zobacz profil</div></div></div></a>
+
+<a href="open.html" class="card-link"><div class="card"><img><div class="card-content"><h3></h3><p></p><span class="online"></span><div class="glass-btn">Zobacz profil</div></div></div></a>
 
 </section>
-
-<section class="more-profiles">
-<a href="open.html" class="btn secondary-btn">
-Zobacz więcej profili
-</a>
-</section>
-
-<div class="trust-line">
-✔ Ochrona danych • ✔ Bezpieczne połączenie • ✔ Dyskretnie
-</div>
-
-<footer class="footer">
-<p>© 2026 NowaMiłość</p>
-</footer>
 
 </div>
 
 <script>
 
-document.addEventListener("DOMContentLoaded", function(){
-
-// ---------- DATA ----------
+document.addEventListener("DOMContentLoaded",function(){
 
 const names=[
 "Kasia","Magda","Ola","Ania","Monika","Ewa","Karolina","Agnieszka",
@@ -80,6 +68,10 @@ const names=[
 "Magdalena","Izabela","Daria","Elżbieta","Halina","Krystyna",
 "Sabina","Ilona","Jolanta","Grażyna","Lidia","Teresa",
 "Zofia","Danuta","Bożena","Lucyna","Małgorzata","Ewelina"
+];
+
+const ages=[
+35,36,37,38,39,40,41,42,43,44,45,46,47,48,49
 ];
 
 const cities=[
@@ -97,8 +89,7 @@ const statuses=[
 
 let usedPhotos=[];
 let usedNames=[];
-
-// ---------- RANDOM PROFILES ----------
+let usedAges=[];
 
 document.querySelectorAll(".card").forEach(card=>{
 
@@ -106,8 +97,6 @@ const img=card.querySelector("img");
 const nameEl=card.querySelector("h3");
 const cityEl=card.querySelector("p");
 const statusEl=card.querySelector(".online");
-
-// unique photo
 
 let photo;
 
@@ -120,8 +109,6 @@ usedPhotos.push(photo);
 
 img.src="images/IMAGE"+photo+".webp";
 
-// unique name
-
 let name;
 
 do{
@@ -131,23 +118,22 @@ while(usedNames.includes(name));
 
 usedNames.push(name);
 
-// age
+let age;
 
-let age=35+Math.floor(Math.random()*15);
+do{
+age=ages[Math.floor(Math.random()*ages.length)];
+}
+while(usedAges.includes(age));
+
+usedAges.push(age);
 
 nameEl.innerText=name+", "+age;
 
-// city
-
 cityEl.innerText=cities[Math.floor(Math.random()*cities.length)];
-
-// status
 
 statusEl.innerText=statuses[Math.floor(Math.random()*statuses.length)];
 
 });
-
-// ---------- SHUFFLE CARDS ----------
 
 const container=document.querySelector(".profiles");
 const cards=Array.from(container.children);
@@ -155,15 +141,13 @@ const cards=Array.from(container.children);
 cards.sort(()=>Math.random()-0.5);
 cards.forEach(card=>container.appendChild(card));
 
-// ---------- REVEAL ANIMATION ----------
-
 setTimeout(()=>{
 
 document.querySelectorAll(".card").forEach((card,i)=>{
 
 setTimeout(()=>{
 card.classList.add("show");
-}, i*120);
+},i*120);
 
 });
 
