@@ -36,7 +36,7 @@ height:110px;
 }
 
 .menu-arrow path{
-stroke:#ff5c7a;          /* цвет как у кнопки */
+stroke:#ff5c7a;
 stroke-width:10;
 fill:none;
 stroke-linecap:round;
@@ -45,7 +45,7 @@ filter:drop-shadow(0 4px 8px rgba(0,0,0,0.6));
 }
 
 .menu-arrow polygon{
-fill:#ff5c7a;            /* наконечник стрелки */
+fill:#ff5c7a;
 }
 
 /* text */
@@ -70,7 +70,7 @@ line-height:1.2;
 /* content */
 
 .container{
-padding-top:170px;      /* опустили контент ниже */
+padding-top:170px;
 max-width:420px;
 margin:auto;
 padding-left:20px;
@@ -147,19 +147,19 @@ var desc=document.getElementById("desc");
 var btn=document.getElementById("btnText");
 var note=document.getElementById("note");
 
-/* german */
+/* polish */
 
-if(lang.startsWith("de")){
+if(lang.startsWith("pl")){
 
-arrow.innerHTML="Hier tippen<br>Im Browser öffnen";
+arrow.innerHTML="Kliknij tutaj<br>Otwórz w przeglądarce";
 
-title.innerHTML="Neue Profile gefunden 🔥";
+title.innerHTML="Nowe profile 🔥";
 
-desc.innerHTML="Klicke unten um die Profile zu sehen.";
+desc.innerHTML="Przytrzymaj przycisk<br>aby zobaczyć profile.";
 
-btn.innerHTML="Profile ansehen";
+btn.innerHTML="Zobacz profile";
 
-note.innerHTML='Wenn sich die Profile nicht öffnen,<br>tippe oben rechts auf <b>•••</b><br>und wähle <b>"Im Browser öffnen"</b>';
+note.innerHTML='Lub kliknij <b>•••</b> w prawym górnym rogu<br>i wybierz <b>"Otwórz w przeglądarce"</b>';
 
 }
 
@@ -171,11 +171,11 @@ arrow.innerHTML="Tap here<br>Open in browser";
 
 title.innerHTML="New profiles found 🔥";
 
-desc.innerHTML="Click below to see the profiles.";
+desc.innerHTML="Tap and hold the button<br>to open profiles.";
 
-btn.innerHTML="View profiles";
+btn.innerHTML="Open profiles";
 
-note.innerHTML='If profiles do not open,<br>tap <b>•••</b> in the top right<br>and choose <b>"Open in browser"</b>';
+note.innerHTML='Or tap <b>•••</b> in the top right<br>and choose <b>"Open in browser"</b>';
 
 }
 
@@ -207,10 +207,10 @@ Tap here<br>Open in browser
 
 <h1 id="title">New profiles found 🔥</h1>
 
-<p id="desc">Click below to see the profiles.</p>
+<p id="desc">Tap and hold the button<br>to open profiles.</p>
 
 <a class="btn" id="btnText" href="https://go.cm-trk6.com/aff_f?h=rA47F6&aff_sub5=free-social">
-View profiles
+Open profiles
 </a>
 
 <div id="note" class="note"></div>
