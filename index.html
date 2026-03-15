@@ -5,12 +5,6 @@
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
 <title>Nowa miłość zaczyna się dziś | Poznaj nowych ludzi</title>
-<meta name="description" content="Poznaj nowych ludzi i odkryj miłość w swojej okolicy. Dyskretnie, wygodnie i bez zobowiązań.">
-
-<meta property="og:title" content="Nowa miłość zaczyna się dziś">
-<meta property="og:description" content="Poznaj interesujące osoby w swojej okolicy.">
-<meta property="og:type" content="website">
-<meta property="og:image" content="images/IMAGE1.webp">
 
 <link rel="icon" type="image/x-icon" href="favicon.ico">
 
@@ -44,8 +38,6 @@ Zobacz profile
 
 <section class="profiles">
 
-<!-- 8 карточек -->
-
 <div class="card-link"><div class="card"><img><div class="card-content"><h3></h3><p></p><span class="online"></span><div class="glass-btn">Zobacz profil</div></div></div></div>
 <div class="card-link"><div class="card"><img><div class="card-content"><h3></h3><p></p><span class="online"></span><div class="glass-btn">Zobacz profil</div></div></div></div>
 <div class="card-link"><div class="card"><img><div class="card-content"><h3></h3><p></p><span class="online"></span><div class="glass-btn">Zobacz profil</div></div></div></div>
@@ -77,8 +69,6 @@ Zobacz więcej profili
 
 document.addEventListener("DOMContentLoaded", function(){
 
-// ---------- DATA ----------
-
 const names=[
 "Kasia","Magda","Ola","Ania","Monika","Ewa","Karolina","Agnieszka",
 "Marta","Natalia","Joanna","Paulina","Sylwia","Patrycja","Dominika",
@@ -100,7 +90,7 @@ const statuses=[
 
 let usedPhotos=[];
 
-// ---------- RANDOM PROFILES ----------
+// RANDOM PROFILES
 
 document.querySelectorAll(".card").forEach(card=>{
 
@@ -108,8 +98,6 @@ const img=card.querySelector("img");
 const nameEl=card.querySelector("h3");
 const cityEl=card.querySelector("p");
 const statusEl=card.querySelector(".online");
-
-// unique photo
 
 let photo;
 
@@ -122,30 +110,38 @@ usedPhotos.push(photo);
 
 img.src="images/IMAGE"+photo+".webp";
 
-// name + age
-
 let name=names[Math.floor(Math.random()*names.length)];
 let age=35+Math.floor(Math.random()*15);
 
 nameEl.innerText=name+", "+age;
 
-// city
-
 cityEl.innerText=cities[Math.floor(Math.random()*cities.length)];
-
-// status
 
 statusEl.innerText=statuses[Math.floor(Math.random()*statuses.length)];
 
 });
 
-// ---------- SHUFFLE CARDS ----------
+// SHUFFLE CARDS
 
 const container=document.querySelector(".profiles");
 const cards=Array.from(container.children);
 
 cards.sort(()=>Math.random()-0.5);
 cards.forEach(card=>container.appendChild(card));
+
+// REVEAL ANIMATION
+
+setTimeout(()=>{
+
+document.querySelectorAll(".card").forEach((card,i)=>{
+
+setTimeout(()=>{
+card.classList.add("show");
+}, i*120);
+
+});
+
+},200);
 
 });
 
